@@ -108,5 +108,5 @@ def find_couple(left: int, right: int) -> list:
     return couple
 
 
-a = find_couple(200, 1210)
+a = find_couple(200, 30010)
 print(a)
