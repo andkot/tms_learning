@@ -2,7 +2,7 @@
 
 # data inputting
 try:
-    num = int(input("Enter nunber, please:"))
+    num = int(input("Enter number, please:"))
 except:
     print("Error input data")
 
