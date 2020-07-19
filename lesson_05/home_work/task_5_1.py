@@ -5,8 +5,6 @@
 # программа (т.е. построить бесконечный цикл). В качестве символа прекращения
 # вычислений принять ‘0’ (т.е. sign='0').
 
-import os
-
 
 def separate_string(input_str: str) -> list:
     """
@@ -22,54 +20,48 @@ def separate_string(input_str: str) -> list:
         return -1
 
 
-clear = lambda: os.system('cls' if os.name == 'nt' else 'clear')
-
 while True:
     # inputting and checking data
-    xy = input(
-        'Enter \'x\' and \'y\' separated with space or \'exit\' to exit, please:'
-    )
+    xy = input("Enter 'x' and 'y' separated with space or 'exit' to exit, please:")
 
-    if xy == 'exit':
+    if xy == "exit":
         break
 
     try:
         x, y = separate_string(xy)
     except:
-        print('Error input data, try again')
+        print("Error input data, try again")
         continue
 
     # result calculating
     while True:
-        flag = input(
-            'Enter one of the next command \'+\', \'-\', \'*\', \'/\' or enter \'exit\' to exit, please:'
+        control_flag = input(
+            "Enter one of the next command '+', '-', '*', '/' or enter 'exit' to exit, please:"
         )
 
-        if flag == '+':
-            print(f'x + y = {x + y}')
+        if control_flag == "+":
+            print(f"x + y = {x + y}")
             break
-        elif flag == '-':
-            print(f'x - y = {x - y}')
+        elif control_flag == "-":
+            print(f"x - y = {x - y}")
             break
-        elif flag == '*':
-            print(f'x * y = {x * y}')
+        elif control_flag == "*":
+            print(f"x * y = {x * y}")
             break
-        elif flag == '/':
+        elif control_flag == "/":
             if y != 0:
-                print(f'x / y = {x / y}')
+                print(f"x / y = {x / y}")
                 break
             else:
-                print('dividing by zero')
+                print("dividing by zero")
                 break
-        elif flag == 'exit':
+        elif control_flag == "exit":
             break
         else:
-            print('Input error, try again')
+            print("Input error, try again")
             continue
 
     # waiting next command
-    wait_flag = input('enter \'exit\' to exit or any command to continue:')
-    if wait_flag == 'exit':
+    wait_flag = input("enter 'exit' to exit or any command to continue:")
+    if wait_flag == "exit":
         break
-
-    clear()

@@ -2,6 +2,7 @@
 # равно сумме всех делителей другого, кроме самого этого числа. Найти все
 # пары дружественных чисел, лежащих в диапазоне от 200 до 300.
 
+
 def is_prime(x: int) -> bool:
     """
     :param x: integer unsigned value
@@ -103,7 +104,7 @@ def find_couple(left: int, right: int) -> list:
     for i in range(left, right + 1):
         for key, value in factorize_sum.items():
             if i != key and i == value and factorize_sum[i] == key:
-                couple.append(str(i) + ' - ' + str(key))
+                couple.append(str(i) + " - " + str(key))
 
     return couple
 
